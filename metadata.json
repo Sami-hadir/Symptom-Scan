@@ -1,0 +1,7 @@
+{
+  "name": "SymptomScan AI",
+  "description": "An AI-powered application to provide a preliminary analysis of skin symptoms from an image. This app is for informational purposes only and is not a substitute for professional medical advice.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
