@@ -37,18 +37,7 @@ export const analyzeImage = async (base64Image: string, mimeType: string, langua
   const systemInstruction = `You are an expert dermatological AI assistant. Your goal is to provide a preliminary assessment, NOT a definitive diagnosis. Adhere strictly to the JSON schema provided.`;
 
   // The prompt is streamlined. Instructions for JSON output are removed as they are enforced by responseSchema.
-  const prompt = `
-    Analyze the provided image of a skin symptom.
-    ${languageInstruction}
-    
-    Based on the image, provide the following details:
-    1. A list of up to 3 possible conditions.
-    2. An overall urgency level.
-    3. A general recommendation.
-    4. A list of potential over-the-counter product recommendations (or an empty array).
-    5. A confidence score for the analysis.
-    6. A mandatory disclaimer about this not being a medical diagnosis.
-  `;
+  const prompt = `Analyze the provided image of a skin symptom and provide a preliminary dermatological assessment. ${languageInstruction}`;
 
   try {
     const response = await ai.models.generateContent({
